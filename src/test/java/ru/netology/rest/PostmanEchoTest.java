@@ -8,7 +8,7 @@ public class PostmanEchoTest {
 
     @Test
     void shouldReturnSentPlainText() {
-        String textToSend = "Все ли верно";
+        String textToSend = "Все ли верно?";
 
         given()
                 .log()
@@ -57,6 +57,6 @@ public class PostmanEchoTest {
                 .log().ifValidationFails() // <--- ЛОГИРОВАНИЕ ОТВЕТА ПРИ ОШИБКЕ
                 .statusCode(200)
                 .body("data.user.role", equalTo("admin"))
-                .body("data.user.id", equalTo(43));
+                .body("data.user.id", equalTo(42));
     }
 }
